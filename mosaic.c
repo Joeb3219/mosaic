@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <string.h>
 #include "mosaic.h"
-#include "png.h"
+#include "bmp.h"
 
 // Defines
 #define flagOrDefault(A, B) ( (isFlagSet(argc, argv, A)) ? 1 : B )
@@ -53,7 +53,7 @@ Args* parseArgs(int argc, char** argv){
 
 
 void createMosaic(Args* args){
-	PNG* source = readPNG(args->str_mosaicName);
+	BMP* source = readBMP(args->str_mosaicName);
 	if(source == NULL){
 		printf("Invalid file: %s\n", args->str_mosaicName);
 		return;
